@@ -1,0 +1,148 @@
+body {
+    background-color: #121212;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.calculator {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    position: relative; /* Ensure the scientific panel is positioned relative to the calculator */
+    width: 270px; /* Set a fixed width to ensure alignment */
+}
+
+/* Display area */
+#display {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: #2c2c2c;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Buttons grid layout */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    gap: 10px;
+}
+
+/* Individual button styling */
+button {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+/* History panel styling */
+.history {
+    margin-top: 20px;
+    background-color: #1d1d1d;
+    padding: 15px;
+    border-radius: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    width: 260px;
+}
+
+.history h3 {
+    margin-top: 0;
+}
+
+#history-list {
+    list-style: none;
+    padding: 0;
+    font-family: monospace;
+}
+
+#history-list li {
+    border-bottom: 1px solid #444;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+#history-list li:hover {
+    background-color: #2c2c2c;
+}
+
+/* History toggle button styling */
+.history-toggle {
+    margin-top: 20px;
+    background-color: #0080ff;
+    color: white;
+}
+
+/* Clear history button */
+.clear-btn {
+    background-color: #cc0000;
+    margin-top: 10px;
+}
+
+.scientific-panel {
+    display: none; /* Hidden by default */
+    position: absolute;  /* Allow it to be moved */
+    left: 20%; /* Panel starts at 30% of the screen width */
+    top: 0; /* Align with the top of the calculator */
+    width: auto; /* Adjust width to match the calculator */
+    height: auto; /* Ensures it doesn't overflow, leaving some space for the top */
+    background-color: #2c2c2c;
+    padding: 10px;
+    margin-top: 255px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+
+/* Scientific buttons grid layout */
+.scientific-panel .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 60px); /* Same grid layout as the main calculator */
+    gap: 10px;
+}
+
+/* Scientific button styling */
+.scientific-panel button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.scientific-panel button:hover {
+    background-color: #444;
+}
+
+.scientific-panel button:last-child {
+    background-color: #ff6347;
+    color: white;
+}
+
+.scientific-panel button:last-child:hover {
+    background-color: #ff4d35;
+}
